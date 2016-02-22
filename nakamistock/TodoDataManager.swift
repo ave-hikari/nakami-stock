@@ -1,0 +1,86 @@
+//
+//  TodoDataManager.swift
+//  nakamistock
+//
+//  Created by Hikari Yanagihara on 2016/02/22.
+//  Copyright © 2016年 Hikari Yanagihara. All rights reserved.
+//
+
+import UIKit
+
+struct TODO {
+    var title : String
+}
+
+class TodoDataManager {
+    let STORE_KEY = "TodoDataManager.store_key"
+    
+    static let sharedInstance = TodoDataManager()
+    
+    var todoList: [TODO]
+    
+    var size : Int {
+        return todoList.count
+    }
+    
+    subscript(index: Int) -> TODO {
+        return todoList[index]
+    }
+    
+    private init() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let data = defaults.objectForKey(self.STORE_KEY) as? [String] {
+            self.todoList = data.map { title in
+                TODO(title: title)
+            }
+        } else {
+            self.todoList = []
+        }
+    }
+    
+    class func validate(todo: TODO!) -> Bool {
+        return todo.title != ""
+    }
+    
+    func save() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let data = self.todoList.map { todo in
+            todo.title
+        }
+        defaults.setObject(data, forKey: self.STORE_KEY)
+        defaults.synchronize()
+    }
+    
+    func create(todo: TODO!) -> Bool {
+        if TodoDataManager.validate(todo) {
+            self.todoList.append(todo)
+            self.save()
+            return true
+        }
+        return false
+    }
+    
+    func update(todo: TODO!, at index: Int) -> Bool {
+        if (index >= self.todoList.count) {
+            return false
+        }
+        
+        if TodoDataManager.validate(todo) {
+            self.todoList[index] = todo
+            self.save()
+            return true
+        }
+        return false
+    }
+    
+    func remove(index: Int) -> Bool {
+        if (index >= self.todoList.count) {
+            return false
+        }
+        
+        self.todoList.removeAtIndex(index)
+        self.save()
+        
+        return true
+    }
+}

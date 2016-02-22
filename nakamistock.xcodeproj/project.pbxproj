@@ -13,6 +13,13 @@
 		2F7A4AE71C7B44B100F5C2DC /* nakamistock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A4AE51C7B44B100F5C2DC /* nakamistock.xcdatamodeld */; };
 		2F7A4AE91C7B44B100F5C2DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7A4AE81C7B44B100F5C2DC /* Assets.xcassets */; };
 		2F7A4AEC1C7B44B100F5C2DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7A4AEA1C7B44B100F5C2DC /* LaunchScreen.storyboard */; };
+		2F7A4AF41C7B464E00F5C2DC /* TodoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A4AF31C7B464E00F5C2DC /* TodoDataManager.swift */; };
+		2F7A4AF61C7B469400F5C2DC /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A4AF51C7B469400F5C2DC /* TodoListViewController.swift */; };
+		2F7A4AF81C7B46C400F5C2DC /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A4AF71C7B46C400F5C2DC /* TodoTableViewCell.swift */; };
+		2F7A4AFC1C7B4F8000F5C2DC /* objcHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A4AFB1C7B4F8000F5C2DC /* objcHeader.m */; };
+		2FC4789B1C7B55AD00A94D5B /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4789A1C7B55AD00A94D5B /* SweetAlert.swift */; };
+		2FC4789D1C7B57D200A94D5B /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4789C1C7B57D200A94D5B /* AppUtility.swift */; };
+		BAD40A21525F34AA9655FEAD /* libPods-nakamistock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E31F790E6745D7C94BCE326C /* libPods-nakamistock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,16 @@
 		2F7A4AE81C7B44B100F5C2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F7A4AEB1C7B44B100F5C2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F7A4AED1C7B44B100F5C2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F7A4AF31C7B464E00F5C2DC /* TodoDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDataManager.swift; sourceTree = "<group>"; };
+		2F7A4AF51C7B469400F5C2DC /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		2F7A4AF71C7B46C400F5C2DC /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		2F7A4AFA1C7B4F7F00F5C2DC /* nakamistock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nakamistock-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F7A4AFB1C7B4F8000F5C2DC /* objcHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = objcHeader.m; sourceTree = "<group>"; };
+		2FC4789A1C7B55AD00A94D5B /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		2FC4789C1C7B57D200A94D5B /* AppUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		E31F790E6745D7C94BCE326C /* libPods-nakamistock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nakamistock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E462FD6DB4EAA7015ACA5E48 /* Pods-nakamistock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nakamistock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nakamistock/Pods-nakamistock.debug.xcconfig"; sourceTree = "<group>"; };
+		EB989D8ADDD5EEEB5F871300 /* Pods-nakamistock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nakamistock.release.xcconfig"; path = "Pods/Target Support Files/Pods-nakamistock/Pods-nakamistock.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +48,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD40A21525F34AA9655FEAD /* libPods-nakamistock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281DBF8A8011C252C6261A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E31F790E6745D7C94BCE326C /* libPods-nakamistock.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2F7A4AD21C7B44B100F5C2DC = {
 			isa = PBXGroup;
 			children = (
 				2F7A4ADD1C7B44B100F5C2DC /* nakamistock */,
 				2F7A4ADC1C7B44B100F5C2DC /* Products */,
+				483BA923808AC021CE3EB99A /* Pods */,
+				281DBF8A8011C252C6261A74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +86,29 @@
 			children = (
 				2F7A4ADE1C7B44B100F5C2DC /* AppDelegate.swift */,
 				2F7A4AE01C7B44B100F5C2DC /* ViewController.swift */,
+				2F7A4AF31C7B464E00F5C2DC /* TodoDataManager.swift */,
+				2F7A4AF51C7B469400F5C2DC /* TodoListViewController.swift */,
+				2F7A4AF71C7B46C400F5C2DC /* TodoTableViewCell.swift */,
 				2F7A4AE21C7B44B100F5C2DC /* Main.storyboard */,
 				2F7A4AE81C7B44B100F5C2DC /* Assets.xcassets */,
 				2F7A4AEA1C7B44B100F5C2DC /* LaunchScreen.storyboard */,
 				2F7A4AED1C7B44B100F5C2DC /* Info.plist */,
 				2F7A4AE51C7B44B100F5C2DC /* nakamistock.xcdatamodeld */,
+				2F7A4AFB1C7B4F8000F5C2DC /* objcHeader.m */,
+				2F7A4AFA1C7B4F7F00F5C2DC /* nakamistock-Bridging-Header.h */,
+				2FC4789A1C7B55AD00A94D5B /* SweetAlert.swift */,
+				2FC4789C1C7B57D200A94D5B /* AppUtility.swift */,
 			);
 			path = nakamistock;
+			sourceTree = "<group>";
+		};
+		483BA923808AC021CE3EB99A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E462FD6DB4EAA7015ACA5E48 /* Pods-nakamistock.debug.xcconfig */,
+				EB989D8ADDD5EEEB5F871300 /* Pods-nakamistock.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F7A4AF01C7B44B100F5C2DC /* Build configuration list for PBXNativeTarget "nakamistock" */;
 			buildPhases = (
+				71F201686704E212FD1C4556 /* Check Pods Manifest.lock */,
 				2F7A4AD71C7B44B100F5C2DC /* Sources */,
 				2F7A4AD81C7B44B100F5C2DC /* Frameworks */,
 				2F7A4AD91C7B44B100F5C2DC /* Resources */,
+				71C55F79BFE3BDFC235078BC /* Embed Pods Frameworks */,
+				9A7E707E1FF7D5165E078A82 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,14 +180,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71C55F79BFE3BDFC235078BC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nakamistock/Pods-nakamistock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71F201686704E212FD1C4556 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A7E707E1FF7D5165E078A82 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nakamistock/Pods-nakamistock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2F7A4AD71C7B44B100F5C2DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F7A4AFC1C7B4F8000F5C2DC /* objcHeader.m in Sources */,
 				2F7A4AE71C7B44B100F5C2DC /* nakamistock.xcdatamodeld in Sources */,
+				2FC4789D1C7B57D200A94D5B /* AppUtility.swift in Sources */,
 				2F7A4AE11C7B44B100F5C2DC /* ViewController.swift in Sources */,
+				2FC4789B1C7B55AD00A94D5B /* SweetAlert.swift in Sources */,
 				2F7A4ADF1C7B44B100F5C2DC /* AppDelegate.swift in Sources */,
+				2F7A4AF81C7B46C400F5C2DC /* TodoTableViewCell.swift in Sources */,
+				2F7A4AF41C7B464E00F5C2DC /* TodoDataManager.swift in Sources */,
+				2F7A4AF61C7B469400F5C2DC /* TodoListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,23 +352,31 @@
 		};
 		2F7A4AF11C7B44B100F5C2DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E462FD6DB4EAA7015ACA5E48 /* Pods-nakamistock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = nakamistock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nakamistock.nakamistock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "nakamistock/nakamistock-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2F7A4AF21C7B44B100F5C2DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB989D8ADDD5EEEB5F871300 /* Pods-nakamistock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = nakamistock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nakamistock.nakamistock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "nakamistock/nakamistock-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 			};
 			name = Release;
 		};
@@ -290,6 +399,7 @@
 				2F7A4AF21C7B44B100F5C2DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
