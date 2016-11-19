@@ -9,27 +9,26 @@
 import Foundation
 import UIKit
 
-//汎用的なクラスメソッドはここに書く
 class AppUtility {
     
     //16進数のカラーコードをUIColorで指定し返却する
     //https://gist.github.com/arshad/de147c42d7b3063ef7bc
-    static func colorWithHexString (hex:String) -> UIColor {
+    static func colorWithHexString (_ hex:String) -> UIColor {
         
-        let cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+        let cString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
         if ((cString as String).characters.count != 6) {
-            return UIColor.grayColor()
+            return UIColor.gray
         }
         
-        let rString = (cString as NSString).substringWithRange(NSRange(location: 0, length: 2))
-        let gString = (cString as NSString).substringWithRange(NSRange(location: 2, length: 2))
-        let bString = (cString as NSString).substringWithRange(NSRange(location: 4, length: 2))
+        let rString = (cString as NSString).substring(with: NSRange(location: 0, length: 2))
+        let gString = (cString as NSString).substring(with: NSRange(location: 2, length: 2))
+        let bString = (cString as NSString).substring(with: NSRange(location: 4, length: 2))
         
         var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-        NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&g)
-        NSScanner(string: bString).scanHexInt(&b)
+        Scanner(string: rString).scanHexInt32(&r)
+        Scanner(string: gString).scanHexInt32(&g)
+        Scanner(string: bString).scanHexInt32(&b)
         
         return UIColor(
             red: CGFloat(Float(r) / 255.0),

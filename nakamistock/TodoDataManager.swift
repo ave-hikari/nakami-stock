@@ -27,9 +27,9 @@ class TodoDataManager {
         return todoList[index]
     }
     
-    private init() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let data = defaults.objectForKey(self.STORE_KEY) as? [String] {
+    fileprivate init() {
+        let defaults = UserDefaults.standard
+        if let data = defaults.object(forKey: self.STORE_KEY) as? [String] {
             self.todoList = data.map { title in
                 TODO(title: title)
             }
@@ -38,20 +38,20 @@ class TodoDataManager {
         }
     }
     
-    class func validate(todo: TODO!) -> Bool {
+    class func validate(_ todo: TODO!) -> Bool {
         return todo.title != ""
     }
     
     func save() {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         let data = self.todoList.map { todo in
             todo.title
         }
-        defaults.setObject(data, forKey: self.STORE_KEY)
+        defaults.set(data, forKey: self.STORE_KEY)
         defaults.synchronize()
     }
     
-    func create(todo: TODO!) -> Bool {
+    func create(_ todo: TODO!) -> Bool {
         if TodoDataManager.validate(todo) {
             self.todoList.append(todo)
             self.save()
@@ -60,7 +60,7 @@ class TodoDataManager {
         return false
     }
     
-    func update(todo: TODO!, at index: Int) -> Bool {
+    func update(_ todo: TODO!, at index: Int) -> Bool {
         if (index >= self.todoList.count) {
             return false
         }
@@ -73,12 +73,12 @@ class TodoDataManager {
         return false
     }
     
-    func remove(index: Int) -> Bool {
+    func remove(_ index: Int) -> Bool {
         if (index >= self.todoList.count) {
             return false
         }
         
-        self.todoList.removeAtIndex(index)
+        self.todoList.remove(at: index)
         self.save()
         
         return true

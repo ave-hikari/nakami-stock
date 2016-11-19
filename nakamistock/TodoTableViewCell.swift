@@ -9,8 +9,8 @@
 import UIKit
 
 @objc protocol TodoTableViewCellDelegate {
-    optional func updateTodo(index: Int)
-    optional func removeTodo(index: Int)
+    @objc optional func updateTodo(_ index: Int)
+    @objc optional func removeTodo(_ index: Int)
 }
 
 class TodoTableViewCell : UITableViewCell {
@@ -24,38 +24,38 @@ class TodoTableViewCell : UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.selectionStyle = .None
+        self.selectionStyle = .none
         
         self.createView()
         
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: "showDeleteButton")
-        swipeRecognizer.direction = .Left
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(TodoTableViewCell.showDeleteButton))
+        swipeRecognizer.direction = .left
         self.contentView.addGestureRecognizer(swipeRecognizer)
         
-        self.contentView.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: "hideDeleteButton"))
+        self.contentView.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(TodoTableViewCell.hideDeleteButton)))
     }
     
     func createView() {
         let origin  = self.frame.origin
         let size    = self.frame.size
         
-        self.contentView.backgroundColor = UIColor.whiteColor()
+        self.contentView.backgroundColor = UIColor.white
         
         //let updateButton = UIButton.buttonWithType(UIButtonType.System)
         
-        let updateButton:UIButton! = UIButton.init(type: UIButtonType.Custom)
+        let updateButton:UIButton! = UIButton.init(type: UIButtonType.custom)
         updateButton.frame = CGRect(x: size.width - 100, y: origin.y, width: 50, height: size.height)
-        updateButton.backgroundColor = UIColor.lightGrayColor()
-        updateButton.setTitle("edit", forState: .Normal)
-        updateButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        updateButton.addTarget(self, action: "updateTodo", forControlEvents: .TouchUpInside)
+        updateButton.backgroundColor = UIColor.lightGray
+        updateButton.setTitle("edit", for: UIControlState())
+        updateButton.setTitleColor(UIColor.white, for: UIControlState())
+        updateButton.addTarget(self, action: #selector(TodoTableViewCell.updateTodo), for: .touchUpInside)
         
-        let removeButton:UIButton! = UIButton.init(type: UIButtonType.Custom)
+        let removeButton:UIButton! = UIButton.init(type: UIButtonType.custom)
         removeButton.frame = CGRect(x: size.width - 50, y: origin.y, width: 50, height: size.height)
-        removeButton.backgroundColor = UIColor.redColor()
-        removeButton.setTitle("delete", forState: .Normal)
-        removeButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        removeButton.addTarget(self, action: "removeTodo", forControlEvents: .TouchUpInside)
+        removeButton.backgroundColor = UIColor.red
+        removeButton.setTitle("delete", for: UIControlState())
+        removeButton.setTitleColor(UIColor.white, for: UIControlState())
+        removeButton.addTarget(self, action: #selector(TodoTableViewCell.removeTodo), for: .touchUpInside)
         
         self.backgroundView = UIView(frame: self.bounds)
         self.backgroundView?.addSubview(updateButton)
@@ -72,25 +72,25 @@ class TodoTableViewCell : UITableViewCell {
     
     func showDeleteButton() {
         if !self.haveButtonsDisplayed {
-            UIView.animateWithDuration(0.1, animations: {
+            UIView.animate(withDuration: 0.1, animations: {
                 let size   = self.contentView.frame.size
                 let origin = self.contentView.frame.origin
                 
                 self.contentView.frame = CGRect(x: origin.x - 100, y:origin.y, width:size.width, height:size.height)
                 
-                }) { completed in self.haveButtonsDisplayed = true }
+                }, completion: { completed in self.haveButtonsDisplayed = true }) 
         }
     }
     
     func hideDeleteButton() {
         if self.haveButtonsDisplayed {
-            UIView.animateWithDuration(0.1, animations: {
+            UIView.animate(withDuration: 0.1, animations: {
                 let size   = self.contentView.frame.size
                 let origin = self.contentView.frame.origin
                 
                 self.contentView.frame = CGRect(x: origin.x + 100, y:origin.y, width:size.width, height:size.height)
                 
-                }) { completed in self.haveButtonsDisplayed = false }
+                }, completion: { completed in self.haveButtonsDisplayed = false }) 
         }
     }
 }
